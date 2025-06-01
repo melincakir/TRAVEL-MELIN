@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>GALERİ</title>
+   <link rel="icon" type="image/png" href="icon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background-color: #f2ecec;
+      color: #e8d9d9;
+    }
+
+  .navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight:bolder;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display:flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+    text-decoration: none
+}
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+
+    /* Galeri başlık */
+    .sayfa-baslik {
+     
+      text-align: center;
+      margin-top: 150px;
+      font-size: 28px;
+      color: #000000;
+    }
+
+    /* Galeri */
+    .galeri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .galeri img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .galeri img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox:active {
+      display: none;
+    }
+
+    .lightbox {
+      cursor: zoom-out;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+ <header>
+  <nav class="navbar">
+     <h1><a href="index.html">TRAVEL&MELİN</a></h1>
+    <ul>
+      
+      <li><a href="#" onclick="location.href='onerilerim.html'">Önerilerim</a></li>
+      <li><a href="#" onclick="location.href='galeri.html'">Galeri</a></li>
+      <li><a href="#" onclick="location.href='hakkinda.html'">Hakkımda</a></li>
+      <li><a href="#" onclick="location.href='iletisim.html'">İletişim</a></li>
+     
+      <li><a href="#" onclick="location.href='uye-giris.html'">Üye Giriş</a></li>
+      <li><a href="favoriler.html">❤️ Favoriler</a></li>
+    </ul>
+  </nav>
+</header>
+  <!-- BAŞLIK -->
+  <div class="sayfa-baslik">GALERİ</div>
+  <!-- GALERİ -->
+  <section class="galeri">
+    <img src="1bb.JPG" alt="Öneri 1" onclick="showLightbox(this.src,'İSTANBUL BOĞAZI-EMİNÖNÜ')">
+    <img src="1aa.JPG" alt="Öneri 2" onclick="showLightbox(this.src,'İSTANBUL BOĞAZI-GALATAPORT')">
+    <img src="1cc.JPG" alt="Öneri 3" onclick="showLightbox(this.src,'İSTANBUL - KARAKÖY')">
+    <img src="1dd.JPG" alt="Öneri 4" onclick="showLightbox(this.src,'TRABZON-UZUNGÖL')">
+    <img src="1ff.JPG" alt="Öneri 5" onclick="showLightbox(this.src,'BODRUM-YALIKAVAK')">
+    <img src="1gg.JPG" alt="Öneri 6" onclick="showLightbox(this.src,'TRABZON-AYASOFYA')">
+    <img src="kap.jpg" alt="Öneri 7" onclick="showLightbox(this.src,'KAPADOKYA-ZELVE AÇIK HAVA MÜZESİ')">
+    <img src="karadc.jpg" alt="Öneri 8" onclick="showLightbox(this.src,'TRABZON-SÜMELA MANASTIRI')">
+    <img src="kap1.jpg" alt="Öneri 9" onclick="showLightbox(this.src,'KAPADOKYA-GÜVERCİN VADİSİ')">
+    <img src="kapkapak.jpg" alt="Öneri 10" onclick="showLightbox(this.src,'Kapadokya-SEYİR TEPESİ')">
+    <img src="sarnıc.jpg" alt="Öneri 11" onclick="showLightbox(this.src,'İSTANBUL-ŞEREFİYE SARNICI')">
+    <img src="sarnıc2.jpg" alt="Öneri 12" onclick="showLightbox(this.src,'İSTANBUL-ŞEREFİYE SARNICI')">
+    <img src="sarnıc3.jpg" alt="Öneri 13" onclick="showLightbox(this.src,'İSTANBUL-ŞEREFİYE SARNICI')">
+    <img src="karads.jpg" alt="Öneri 14" onclick="showLightbox(this.src,'TRABZON-SÜMELA MANASTIRI')">
+     <img src="batm.jpg" alt="Öneri 15" onclick="showLightbox(this.src,'BATUM-AVRUPA MEYDANI')">
+    <img src="batumi.jpg" alt="Öneri 16" onclick="showLightbox(this.src,'BATUM-AVRUPA MEYDANI')">
+    <img src="batumkap.jpg" alt="Öneri 17" onclick="showLightbox(this.src,'BATUM-AVRUPA MEYDANI')">
+      <img src="kapmel.jpg" alt="Öneri 18" onclick="showLightbox(this.src,'KAPADOKYA-ZELVE AÇIK HAVA MÜZESİ')">
+  </section>
+
+<div class="lightbox" id="lightbox" onclick="hideLightbox()">
+  <img id="lightbox-img" src="" alt="Büyük Görsel">
+  <div class="yazi" id="lightbox-yazi"></div>
+</div>
+<script>
+  function showLightbox(src, yazi) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-yazi').textContent = yazi;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function hideLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+
+
+</body>
+</html>

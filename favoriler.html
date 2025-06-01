@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Favoriler</title>
+   <link rel="icon" type="image/png" href="icon.png">
+
+  <style>
+   body{
+    background-color: #f2ecec;
+   }
+
+/* Başlık */
+
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+    text-decoration: none
+}
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+.sayfa-baslik {
+   
+      text-align: center;
+      margin-top: 150px;
+      font-size: 28px;
+      color: #000000;
+    }
+ 
+  .favori-cikar-btn {
+    padding: 8px 14px;
+    background-color: #de449b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .favori-cikar-btn:hover {
+    background-color: #591e3f;
+  }
+
+    .favori-kutusu { border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 10px; display: flex; }
+    .favori-kutusu img { width: 150px; margin-right: 10px; }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+  <nav class="navbar">
+     <h1><a href="index.html">TRAVEL&MELİN</a></h1>
+    <ul>
+      
+      <li><a href="#" onclick="location.href='onerilerim.html'">Önerilerim</a></li>
+      <li><a href="#" onclick="location.href='galeri.html'">Galeri</a></li>
+      <li><a href="#" onclick="location.href='hakkinda.html'">Hakkımda</a></li>
+      <li><a href="#" onclick="location.href='iletisim.html'">İletişim</a></li>
+      <li><a href="#" onclick="location.href='uye-giris.html'">Üye Giriş</a></li>
+      <li><a href="favoriler.html">❤️ Favoriler</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+
+<div class="sayfa-baslik">FAVORİLER</div>
+  
+  
+  <div id="favori-listesi"></div>
+<script>
+    // localStorage'dan 'favoriler' dizisini al. Yoksa boş bir dizi oluştur
+  let favoriler = JSON.parse(localStorage.getItem('favoriler')) || [];
+  // HTML'de favori öğelerinin gösterileceği alanı seç.
+  const container = document.getElementById('favori-listesi');
+// Favorileri ekrana yerleştiren fonksiyon.
+  function guncelleFavoriler() {
+
+    container.innerHTML = ''; // Önce tüm içeriği temizle
+    // Favori listesindeki her bir öğeyi döngüyle işle
+    favoriler.forEach((item, index) => {
+       // Yeni bir div elementi oluştur
+      const div = document.createElement('div');
+      div.className = 'favori-kutusu';
+      // İçeriğini HTML olarak ayarla
+   div.innerHTML = `
+  <img src="${item.resim}" alt="">
+  <div>
+    <h4>${item.baslik}</h4>
+    <button class="favori-cikar-btn" onclick="favoridenCikar(${index})">Favoriden Çıkar</button>
+  </div>
+`;
+
+      // Bu div'i sayfadaki container'a ekle
+      container.appendChild(div);
+    });
+  }
+ // Favorilerden eleman silme fonksiyonu
+  function favoridenCikar(index) {
+    favoriler.splice(index, 1);
+      // Güncellenmiş diziyi tekrar localStorage'a kaydet
+    localStorage.setItem('favoriler', JSON.stringify(favoriler));
+     // Favori listesini tekrar güncelle (sayfayı yenilemeden)
+    guncelleFavoriler();
+  }
+// Sayfa yüklendiğinde mevcut favorileri göster
+  guncelleFavoriler();
+</script>
+
+</body>
+</html>

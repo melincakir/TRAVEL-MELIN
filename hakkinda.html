@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Önerilerim</title>
+   <link rel="icon" type="image/png" href="icon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background-color: #f2ecec;
+      color: #333;
+    }
+
+  .navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+    text-decoration: none
+}
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+
+    /* Galeri başlık */
+    .sayfa-baslik {
+      text-align: center;
+      margin-top: 150px;
+      font-size: 28px;
+      color: #1e3d59;
+    }
+      .aciklama {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .resimler {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .resimler img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .resimler img:hover {
+      transform: scale(1.05);
+    }
+        @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      } }
+      </style>
+</head>
+      <body>
+ <header>
+  <nav class="navbar">
+     <h1><a href="index.html">TRAVEL&MELİN</a></h1>
+    <ul>
+      
+      <li><a href="#" onclick="location.href='onerilerim.html'">Önerilerim</a></li>
+      <li><a href="#" onclick="location.href='galeri.html'">Galeri</a></li>
+      <li><a href="#" onclick="location.href='hakkinda.html'">Hakkında</a></li>
+      <li><a href="#" onclick="location.href='iletisim.html'">İletişim</a></li>
+      <li><a href="#" onclick="location.href='uye-giris.html'">Üye Giriş</a></li>
+      <li><a href="favoriler.html">❤️ Favoriler</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <div class="sayfa-baslik">HAKKIMDA</div>
+    
+   <div class="resimler">
+    <img src="mel.jpg" alt="Şerefiye Sarnıcı 1">
+    <img src="mel2.jpg" alt="Şerefiye Sarnıcı 2">
+    <img src="vdayy.JPG" alt="Şerefiye Sarnıcı 3">
+  </div>
+
+  <!-- AÇIKLAMA -->
+  <div class="aciklama">
+    <h2>Peki Ben Kimim?</h2>
+    <p> Merhabalar Ben Melin ÇAKIR. 13.03.2004 Tarihinde Düzce'de Doğdum. Küçüklüğümden Beri Ailemle Gezmeyi Ve Yeni Yerler Keşfetmeyi Çok Severim.
+     16 Yaşımda bir turizm firmasında çalışmaya başladım ve bu gezi tutkum aynı zamanda işime dönüştü. Türkiye'nin 7 bölgesini de gezdim ve bu gezilerimde sizin de gittiğinizde
+     görmenizi ve önerdiğim noktaları paylaşmak istedim.Umarım hem aklınızda bir fikir oluşturur hem de seversiniz :)
+    </p>
+  </div>
+</head>
+<body>

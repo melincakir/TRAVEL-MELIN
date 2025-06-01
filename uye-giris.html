@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Üye Giriş / Kayıt</title>
+   <link rel="icon" type="image/png" href="icon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background: #f2ecec;
+    }
+
+  .navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+    text-decoration: none
+}
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+    .container {
+     
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 50px 20px;
+      flex-wrap: wrap;
+      
+    }
+
+    .form-box {
+    
+      margin: 10px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .form-box h2 {
+      margin-top: 100px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #de449b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background-color:#de449b;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  
+  <header>
+  <nav class="navbar">
+     <h1><a href="index.html">TRAVEL&MELİN</a></h1>
+    <ul>
+      
+      <li><a href="#" onclick="location.href='onerilerim.html'">Önerilerim</a></li>
+      <li><a href="#" onclick="location.href='galeri.html'">Galeri</a></li>
+      <li><a href="#" onclick="location.href='hakkinda.html'">Hakkında</a></li>
+      <li><a href="#" onclick="location.href='iletisim.html'">İletişim</a></li>
+      <li><a href="#" onclick="location.href='uye-giris.html'">Üye Giriş</a></li>
+      <li><a href="favoriler.html">❤️ Favoriler</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  
+    <div class="form-box">
+      <h2>Üye Giriş</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="Kullanıcı Adı" required>
+        <input type="password" id="loginPass" placeholder="Parola" required>
+        <button type="submit">Giriş Yap</button>
+        <div id="loginMessage" class="message"></div>
+      </form>
+    </div>
+
+  
+    <div class="form-box">
+      <h2>Üye Ol</h2>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Ad Soyad" required>
+        <input type="email" id="regEmail" placeholder="E-posta" required>
+        <input type="password" id="regPass" placeholder="Parola" required>
+        <button type="submit">Üye Ol</button>
+        <div id="regMessage" class="message"></div>
+      </form>
+    </div>
+  </div>
+  
+<script>
+    // Sahte kullanıcı verisi
+    const demoUser = {
+      username: "melin",
+      password: "12345"
+    };
+
+    // Giriş Formu
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const user = document.getElementById("loginUser").value;
+      const pass = document.getElementById("loginPass").value;
+      const message = document.getElementById("loginMessage");
+
+      if (user === demoUser.username && pass === demoUser.password) {
+        message.style.color = "green";
+        message.textContent = "Giriş başarılı! Hoş geldiniz.";
+      } else {
+        message.style.color = "red";
+        message.textContent = "Kullanıcı adı veya parola yanlış!";
+      }
+    });
+
+    // Üye Ol Formu
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const pass = document.getElementById("regPass").value;
+      const message = document.getElementById("regMessage");
+
+      console.log("Yeni kayıt:", { name, email, pass });
+      message.style.color = "green";
+      message.textContent = "Kayıt başarılı! Artık giriş yapabilirsiniz.";
+    });
+  </script>

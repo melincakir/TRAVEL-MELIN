@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Önerilerim</title>
+   <link rel="icon" type="image/png" href="icon.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background-color: #f2ecec;
+      color: #333;
+    }
+
+     
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+    text-decoration: none
+}
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+
+      .sayfa-baslik {
+      text-align: center;
+      margin-top: 150px;
+      font-size: 28px;
+      color: #1e3d59;
+ 
+    }
+
+    .oneriler {
+    padding: 40px 20px;
+    background-color: #f2ecec;
+  }
+  
+  .oneriler h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #1e3d59;
+  }
+  
+  .oneri-kutusu {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .oneri-kutusu:hover {
+    transform: scale(1.02);
+  }
+  
+  .oneri-kutusu img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .oneri-icerik h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .oneri-icerik p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Mobil uyumluluk */
+  @media (max-width: 768px) {
+    .oneri-kutusu {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .oneri-kutusu img {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .daha-fazla-btn {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #d4569d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .daha-fazla-btn:hover {
+    background-color: #a5186a;
+  }  
+
+  .kalp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+.oneri-kutusu {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.kalp.secili {
+  color: red;
+}
+
+
+      </style>
+</head>
+      <body>
+ <header>
+  <nav class="navbar">
+     <h1><a href="index.html">TRAVEL&MELİN</a></h1>
+    <ul>
+      
+      <li><a href="#" onclick="location.href='onerilerim.html'">Önerilerim</a></li>
+      <li><a href="#" onclick="location.href='galeri.html'">Galeri</a></li>
+      <li><a href="#" onclick="location.href='hakkinda.html'">Hakkında</a></li>
+      <li><a href="#" onclick="location.href='iletisim.html'">İletişim</a></li>
+      <li><a href="#" onclick="location.href='uye-giris.html'">Üye Giriş</a></li>
+      <li><a href="favoriler.html">❤️ Favoriler</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <div class="sayfa-baslik">ÖNERİLERİM</div>
+
+     <section class="oneriler">
+
+    <div class="oneri-kutusu">
+      <div class="kalp" onclick="toggleFavori(this, 'Sümela Manastırı', 'kkapak.jpg')">🤍</div>
+
+      <img src="kkapak.jpg" alt="Tavsiye 1">
+      <div class="oneri-icerik">
+        <h4>Nasıl İnşa Edildi? Sümela Manastırı </h4>
+        <p>Olduğu Konumu Görünce Nasıl Yapıldı Diye Düşüneceğiniz, Yılların Mirası Sümela Manastırı</p>
+        <button class="daha-fazla-btn" onclick="location.href='oneri1.html'">Daha Fazla</button>
+      </div>
+    </div>
+  
+    <div class="oneri-kutusu">
+      <div class="kalp" onclick="toggleFavori(this, 'Kapadokya', 'kapkapak.jpg')">🤍</div>
+      <img src="kapkapak.jpg" alt="Tavsiye 2">
+      <div class="oneri-icerik">
+        <h4>Dünyanın En Romantik Şehiri..</h4>
+        <p>Doğal Güzellikleriyle Sizleri Kendine Hayran Eden Dünyanın Belki de En Romantik Şehri Kapadokya</p>
+        <button class="daha-fazla-btn" onclick="location.href='oneri2.html'" >Daha Fazla</button>
+      </div>
+    </div>
+  
+    <div class="oneri-kutusu">
+      <div class="kalp" onclick="toggleFavori(this, 'şerefiye sarnıcı', 'bbbb.jpg')">🤍</div>
+      <img src="bbbb.jpg" alt="Tavsiye 3">
+      <div class="oneri-icerik">
+        <h4>Şerefiye Sarnıcı</h4>
+        <p>İstanbulda Kullanılan Yenilikçi Teknolojileriyle Sizleri Büyüleyecek Olan Sarnıç...</p>
+        <button class="daha-fazla-btn" onclick="location.href='oneri3.html'">Daha Fazla</button>
+      </div>
+    </div>
+     <div class="oneri-kutusu">
+      <div class="kalp" onclick="toggleFavori(this, 'GÜRCİSTAN-BATUM', 'batumkap.jpg')">🤍</div>
+      <img src="batumkap.jpg" alt="Tavsiye 4">
+      <div class="oneri-icerik">
+        <h4>GÜRCİSTAN-BATUM</h4>
+        <p>İstanbulda Kullanılan Yenilikçi Teknolojileriyle Sizleri Büyüleyecek Olan Sarnıç...</p>
+        <button class="daha-fazla-btn" onclick="location.href='oneri4.html'">Daha Fazla</button>
+      </div>
+    </div>
+
+
+  </section>
+
+    </head>
+<body>
+    <script>
+  function toggleFavori(elem, baslik, resim) {
+    let favoriler = JSON.parse(localStorage.getItem('favoriler')) || [];
+
+    const index = favoriler.findIndex(item => item.baslik === baslik);
+
+    if (index === -1) {
+      // Favoriye ekle
+      favoriler.push({ baslik, resim });
+      elem.textContent = "❤️";
+      elem.classList.add("secili");
+    } else {
+      // Favoriden çıkar
+      favoriler.splice(index, 1);
+      elem.textContent = "🤍";
+      elem.classList.remove("secili");
+    }
+
+    localStorage.setItem('favoriler', JSON.stringify(favoriler));
+  }
+
+  // Sayfa yüklendiğinde favori olanları işaretle
+  window.onload = function() {
+    const favoriler = JSON.parse(localStorage.getItem('favoriler')) || [];
+    document.querySelectorAll('.oneri-kutusu').forEach(kutu => {
+      const baslik = kutu.querySelector('h4')?.innerText;
+      const kalp = kutu.querySelector('.kalp');
+      if (favoriler.find(item => item.baslik === baslik)) {
+        kalp.textContent = "❤️";
+        kalp.classList.add("secili");
+      }
+    });
+  };
+</script>

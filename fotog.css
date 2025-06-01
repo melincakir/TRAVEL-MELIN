@@ -1,0 +1,304 @@
+
+body {
+    margin: 0;
+    font-family:'Times New Roman', Times, serif
+    background-color #0e0202;
+    color: #222222;
+    margin: 0;
+background-color: #f2ecec;
+  
+  }
+  
+  a {
+    text-decoration:none;
+    color: inherit;
+    
+  }
+ 
+  
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #591e3f, #de449b);
+  color: #fff;
+  padding: 45px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Başlık */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Menü listesi */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menü linkleri */
+.navbar ul li a {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 6px;
+}
+
+/* Hover efekti */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    display: block;
+  }
+}
+
+  
+  /* Hero */
+  .hero {
+  background-image: url(newkapak.jpg);
+  background-size:contain;
+  background-position:center;
+  
+    padding: 150px 20px;
+  }
+  .hero h3{
+    text-align: center;
+    font-size: 35px;
+  color: #ffffff;
+  }
+  
+  /* Galeri */
+  .galeri-bolumu {
+    padding: 40px 20px;
+    background-color: #f2ecec;
+  }
+  
+  .galeri-bolumu h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .galeri-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+  
+  .galeri-container img {
+    width: 300px;
+    height: 200px;
+    margin-right: 10px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: inline-block;
+  }
+  
+  /* Hakkında ve İletişim */
+  .hakkinda,
+  .iletisim {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f2ecec;
+    margin-top: 10px;
+  }
+  
+  .iletisim a {
+    color: #1e3d59;
+    font-weight: bold;
+  }
+  .profil-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1e3d59;
+    margin-bottom: 15px;
+  }
+
+  .bilgi-kutusu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    background-color: #faebef;
+    margin: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bolum {
+    flex: 1;
+    background-color: #f2ecec;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .bolum img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .bolum h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #1e3d59;
+  }
+  
+  .bolum p {
+    font-size: 14px;
+    color: #555;
+  }
+  .bolum img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* animasyon için */
+  }
+  
+  .bolum img:hover {
+    transform: scale(1.05); /* %5 büyüme */
+  }
+  
+  
+  .oneriler {
+    padding: 40px 20px;
+    background-color: #f2ecec;
+  }
+  
+  .oneriler h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #1e3d59;
+  }
+  
+  .oneri-kutusu {
+    display: flex;
+    align-items: center;
+    background-color:#faebef;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .oneri-kutusu:hover {
+    transform: scale(1.02);
+  }
+  
+  .oneri-kutusu img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .oneri-icerik h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .oneri-icerik p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Mobil uyumluluk */
+  @media (max-width: 768px) {
+    .oneri-kutusu {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .oneri-kutusu img {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .daha-fazla-btn {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #f881b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .daha-fazla-btn:hover {
+    background-color: #ac357f;
+  }  
+
+  .kalp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+.oneri-kutusu {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.kalp.secili {
+  color: red;
+}
+
+
+
+  
